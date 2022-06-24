@@ -113,22 +113,25 @@
     cell.handle.text = [@"@" stringByAppendingString :curr_tweet.user.screenName];
 //    cell.date.text = curr_tweet.createdAtString;
     
-    NSString * curr_date = curr_tweet.createdAtString;
-//    NSLog(@"%@", curr_date);
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
-    NSDate *date = [formatter dateFromString:curr_date];
+//    NSString * curr_date = curr_tweet.createdAtString;
+////    NSLog(@"%@", curr_date);
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
+//    NSDate *date = [formatter dateFromString:curr_date];
     
-    NSLog(@"%@", date);
-    [cell formatDate:date]; 
+    NSLog(@"%@", curr_tweet.date.shortTimeAgoSinceNow);
+    
+    NSString *final_date = [curr_tweet.date.shortTimeAgoSinceNow stringByAppendingString:@" ago"];
+    [cell.date setText: final_date];
+//    [cell formatDate:curr_tweet.date.shortTimeAgoSinceNow];
     
 //
-    if (date.shortTimeAgoSinceNow == NULL){
-        cell.date.text =  date.timeAgoSinceNow;
-    }
-    else {
-        cell.date.text = date.shortTimeAgoSinceNow;
-    }
+//    if (date.shortTimeAgoSinceNow == NULL){
+//        cell.date.text =  date.timeAgoSinceNow;
+//    }
+//    else {
+//        cell.date.text = date.shortTimeAgoSinceNow;
+//    }
     
     
     cell.tweetText.text = curr_tweet.text;

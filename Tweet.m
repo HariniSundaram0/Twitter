@@ -35,12 +35,13 @@
         // Configure the input format to parse the date string
         formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
         // Convert String to Date
-        NSDate *date = [formatter dateFromString:createdAtOriginalString];
+        NSDate *dateobj = [formatter dateFromString:createdAtOriginalString];
+        self.date = dateobj; 
         // Configure output format
         formatter.dateStyle = NSDateFormatterShortStyle;
         formatter.timeStyle = NSDateFormatterNoStyle;
         // Convert Date to String
-        self.createdAtString = [formatter stringFromDate:date];
+        self.createdAtString = [formatter stringFromDate:dateobj];
     }
     return self;
 }

@@ -78,19 +78,19 @@
                                                 <constraint firstAttribute="height" constant="60" id="lEl-V3-1Sf"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="First Last Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVM-OA-CT3">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="First Last Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVM-OA-CT3">
                                             <rect key="frame" x="76" y="10.5" width="119" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@Handle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGi-cO-1V4">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="@Handle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dGi-cO-1V4">
                                             <rect key="frame" x="203" y="13" width="84" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYh-2R-Bkz">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYh-2R-Bkz">
                                             <rect key="frame" x="291" y="13" width="74" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" systemColor="opaqueSeparatorColor"/>
@@ -167,6 +167,7 @@
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MYh-2R-Bkz" secondAttribute="trailing" constant="10" id="01G-BW-A96"/>
                                         <constraint firstItem="VAz-K4-NuJ" firstAttribute="centerY" secondItem="smS-BH-uM0" secondAttribute="centerY" id="1Yx-Px-yxN"/>
                                         <constraint firstItem="v6d-9I-NpV" firstAttribute="centerY" secondItem="smS-BH-uM0" secondAttribute="centerY" id="2h2-eE-0Wq"/>
                                         <constraint firstItem="ZeE-xC-dGF" firstAttribute="top" secondItem="MX1-Kv-aeh" secondAttribute="bottom" id="3Ac-f5-Ph7"/>
@@ -184,9 +185,10 @@
                                         <constraint firstItem="smS-BH-uM0" firstAttribute="top" secondItem="MX1-Kv-aeh" secondAttribute="bottom" id="NNP-kZ-5NW"/>
                                         <constraint firstAttribute="trailing" secondItem="HVM-OA-CT3" secondAttribute="trailing" constant="180" id="Ugq-DA-Rhy"/>
                                         <constraint firstItem="ZeE-xC-dGF" firstAttribute="centerY" secondItem="voW-qT-dxu" secondAttribute="centerY" constant="3.5" id="VpY-zR-y2o"/>
+                                        <constraint firstItem="HVM-OA-CT3" firstAttribute="top" secondItem="dGi-cO-1V4" secondAttribute="bottom" constant="-16.5" id="Wya-Kk-acH"/>
                                         <constraint firstItem="397-HX-pco" firstAttribute="centerY" secondItem="voW-qT-dxu" secondAttribute="centerY" id="a4F-Ib-fDQ"/>
                                         <constraint firstAttribute="trailing" secondItem="MX1-Kv-aeh" secondAttribute="trailing" constant="10" id="aPQ-bn-MqU"/>
-                                        <constraint firstItem="MYh-2R-Bkz" firstAttribute="leading" secondItem="dGi-cO-1V4" secondAttribute="trailing" constant="10" id="cwD-TT-v6w"/>
+                                        <constraint firstItem="MYh-2R-Bkz" firstAttribute="leading" secondItem="dGi-cO-1V4" secondAttribute="trailing" constant="5" id="cwD-TT-v6w"/>
                                         <constraint firstItem="Gtm-Mn-Za8" firstAttribute="leading" secondItem="v6d-9I-NpV" secondAttribute="trailing" id="d81-wV-jGb"/>
                                         <constraint firstItem="MX1-Kv-aeh" firstAttribute="top" secondItem="Vr7-uz-ze5" secondAttribute="top" constant="39" id="diT-88-SJF"/>
                                         <constraint firstItem="ZeE-xC-dGF" firstAttribute="leading" secondItem="397-HX-pco" secondAttribute="trailing" constant="10" id="evK-89-Dti"/>
@@ -196,7 +198,7 @@
                                         <constraint firstItem="voW-qT-dxu" firstAttribute="centerY" secondItem="v6d-9I-NpV" secondAttribute="centerY" id="isX-kW-cIP"/>
                                         <constraint firstItem="voW-qT-dxu" firstAttribute="top" secondItem="MX1-Kv-aeh" secondAttribute="bottom" id="kUX-tm-lTG"/>
                                         <constraint firstItem="VAz-K4-NuJ" firstAttribute="leading" secondItem="smS-BH-uM0" secondAttribute="trailing" id="mYb-Dt-F79"/>
-                                        <constraint firstItem="dGi-cO-1V4" firstAttribute="leading" secondItem="HVM-OA-CT3" secondAttribute="trailing" constant="10" id="nRf-rX-y60"/>
+                                        <constraint firstItem="dGi-cO-1V4" firstAttribute="leading" relation="lessThanOrEqual" secondItem="HVM-OA-CT3" secondAttribute="trailing" constant="10" id="nRf-rX-y60"/>
                                         <constraint firstItem="dum-hs-IsF" firstAttribute="top" secondItem="Vr7-uz-ze5" secondAttribute="top" constant="16" id="qnr-8L-4ip"/>
                                         <constraint firstAttribute="bottom" secondItem="voW-qT-dxu" secondAttribute="bottom" constant="10" id="rmy-Xr-lQZ"/>
                                         <constraint firstItem="dum-hs-IsF" firstAttribute="leading" secondItem="Vr7-uz-ze5" secondAttribute="leading" constant="16" id="stL-Ud-wKM"/>

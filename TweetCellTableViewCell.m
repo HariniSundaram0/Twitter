@@ -96,9 +96,9 @@
 //    }
 }
 
--(void) formatDate: (NSDate * ) date{
-    [self.date setText: [date shortTimeAgoSinceNow]]; 
-}
+//-(void) formatDate: (NSDate * ) date{
+//    [self.date setText: date];
+//}
 
 
 @end
