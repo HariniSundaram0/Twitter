@@ -14,6 +14,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "ComposeViewController.h"
 #import "DateTools.h"
+#import "DetailsViewController.h"
 
 @interface TimelineViewController () <ComposeViewDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -119,7 +120,7 @@
 //    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
 //    NSDate *date = [formatter dateFromString:curr_date];
     
-    NSLog(@"%@", curr_tweet.date.shortTimeAgoSinceNow);
+//    NSLog(@"%@", curr_tweet.date.shortTimeAgoSinceNow);
     
     NSString *final_date = [curr_tweet.date.shortTimeAgoSinceNow stringByAppendingString:@" ago"];
     [cell.date setText: final_date];
@@ -155,12 +156,24 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
+    if([[segue identifier] isEqualToString:@"Navigation Controller"]) {
     UINavigationController *navigationController = [segue destinationViewController];
     ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
     composeController.delegate = self;
+    }
+    else{
+        
     
+//    DetailsViewController *detailVC = [segue detailsViewController];
+    NSIndexPath * myIndexPath = [self.tableView indexPathForCell:sender];
+    Tweet *dataToPass = self.arrayOfTweets[myIndexPath.row];
+    DetailsViewController *detailVC = [segue destinationViewController];
+    detailVC.tweet = dataToPass;
+//    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+//    composeController.delegate = self;
     
 //    NSLog(@"%@", dataToPass);
+    }
     
 }
 
