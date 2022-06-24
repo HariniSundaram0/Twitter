@@ -9,6 +9,8 @@
 #import "TweetCellTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "APIManager.h"
+#import "DateTools.h"
+
 @implementation TweetCellTableViewCell
 
 - (void)awakeFromNib {
@@ -85,7 +87,18 @@
         [self.retweetButton setImage:[UIImage imageNamed:@"retweet-icon.png"] forState:UIControlStateNormal];
     }
 
+    
+    
+    
+    
+    
 //        self.
 //    }
 }
+
+-(void) formatDate: (NSDate * ) date{
+    [self.date setText: [date shortTimeAgoSinceNow]]; 
+}
+
+
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Tweet.h"
+#import "DateTools.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,7 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *author;
 @property (weak, nonatomic) IBOutlet UIButton *retweetButton;
 @property Tweet * tweet;
+-(void) formatDate: (NSDate * ) date;
+
 
 @end
+
 
 NS_ASSUME_NONNULL_END

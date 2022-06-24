@@ -13,6 +13,7 @@
 #import "LoginViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "ComposeViewController.h"
+#import "DateTools.h"
 
 @interface TimelineViewController () <ComposeViewDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -110,7 +111,26 @@
     [cell.profilePic setImageWithURL: url ] ;
     cell.author.text = curr_tweet.user.name;
     cell.handle.text = [@"@" stringByAppendingString :curr_tweet.user.screenName];
-    cell.date.text = curr_tweet.createdAtString;
+//    cell.date.text = curr_tweet.createdAtString;
+    
+    NSString * curr_date = curr_tweet.createdAtString;
+//    NSLog(@"%@", curr_date);
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
+    NSDate *date = [formatter dateFromString:curr_date];
+    
+    NSLog(@"%@", date);
+    [cell formatDate:date]; 
+    
+//
+    if (date.shortTimeAgoSinceNow == NULL){
+        cell.date.text =  date.timeAgoSinceNow;
+    }
+    else {
+        cell.date.text = date.shortTimeAgoSinceNow;
+    }
+    
+    
     cell.tweetText.text = curr_tweet.text;
     cell.retweetNum.text =[NSString stringWithFormat:@"%i", curr_tweet.retweetCount];
     cell.faveNum.text = [NSString stringWithFormat:@"%i", curr_tweet.favoriteCount];
